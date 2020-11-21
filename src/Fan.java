@@ -24,5 +24,99 @@ method
 
 public class Fan {
 
-    
-}
+    final static int SLOW = 1;
+    final static int MEDIUM = 2;
+    final static int FAST = 3;
+    private int speed;
+    private boolean on;
+    private double radius;
+    String color;
+
+    public Fan() {
+
+        speed = SLOW;
+        on = false;
+        radius = 5;
+        color = "pink";
+
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public boolean isOn() {
+        return on;
+    }
+
+    public void setOn(boolean on) {
+        this.on = on;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        if (on == true) {
+            return "Fan{" +
+                    "speed=" + getSpeed() +
+                    ", on=" + on +
+                    ", radius=" + getRadius() +
+                    ", color='" + getColor() + '\'' +
+                    '}';
+        } else {
+            return "Fan{" +
+                    ", radius=" + getRadius() +
+                    ", color='" + getColor() + '\'' + "Fan is off" +
+                    ']';
+        }
+
+
+    }
+
+
+    public static void main(String[] args) {
+
+        Fan fan1 = new Fan();
+        Fan fan2 = new Fan();
+
+        //Assign maximum speed, radius 10, color yellow,
+        //and turn it on to the first object
+
+        fan1.setSpeed(3);
+        fan1.setRadius(10);
+        fan1.setColor("yellow");
+        fan1.setOn(true);
+
+       //Assign medium speed, radius 5, color blue, and
+        // And turn it off to the second object
+
+        fan2.setSpeed(2);
+        fan2.setRadius(5);
+        fan2.setColor("blue");
+        fan2.setOn(false);
+
+        System.out.println(fan1.toString());
+        System.out.println(fan2.toString());
+
+
+    }
+    }
